@@ -668,52 +668,53 @@ BO_ 1064 UI_telemetryControl: 8 XXX
 BO_ 522 BrakeMessage: 8 XXX
  SG_ driverBrakeStatus : 2|2@1+ (1,0) [0|3] "" XXX
 
-BO_ 921 AutopilotStatus: 8 XXX
- SG_ autopilotStatus : 0|4@1+ (1,0) [0|0] "" XXX
- SG_ DAS_blindSpotRearLeft : 4|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_blindSpotRearRight : 6|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_fusedSpeedLimit : 8|5@1+ (5,0) [0|150] "kph/mph" XXX
- SG_ DAS_suppressSpeedWarning : 13|1@1+ (1,0) [0|0] "" XXX
- SG_ DAS_summonObstacle : 14|1@1+ (1,0) [0|0] "" XXX
- SG_ DAS_summonClearedGate : 15|1@1+ (1,0) [0|0] "" XXX
- SG_ DAS_visionOnlySpeedLimit : 16|5@1+ (5,0) [0|150] "kph/mph" XXX
- SG_ DAS_heaterState : 21|1@1+ (1,0) [0|0] "" XXX
- SG_ DAS_forwardCollisionWarning : 22|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_autoparkReady : 24|1@1+ (1,0) [0|1] "" XXX
- SG_ DAS_autoParked : 25|1@1+ (1,0) [0|0] "" XXX
- SG_ DAS_autoparkWaitingForBrake : 26|1@1+ (1,0) [0|1] "" XXX
- SG_ DAS_summonFwdLeashReached : 28|1@1+ (1,0) [0|1] "" XXX
- SG_ DAS_summonRvsLeashReached : 29|1@1+ (1,0) [0|1] "" XXX
- SG_ DAS_sideCollisionAvoid : 30|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_sideCollisionWarning : 32|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_sideCollisionInhibit : 34|1@1+ (1,0) [0|0] "" XXX
- SG_ DAS_csaState : 35|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_laneDepartureWarning : 37|3@1+ (1,0) [0|0] "" XXX
- SG_ DAS_fleetSpeedState : 40|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_autopilotHandsOnState : 42|4@1+ (1,0) [0|0] "" XXX
- SG_ DAS_autoLaneChangeState : 46|5@1+ (1,0) [0|0] "" XXX
- SG_ DAS_summonAvailable : 51|1@1+ (1,0) [0|1] "" XXX
- SG_ DAS_statusCounter : 52|4@1+ (1,0) [0|0] "" XXX
- SG_ DAS_statusChecksum : 56|8@1+ (1,0) [0|0] "" XXX
+BO_ 921 DAS_status: 8 XXX
+ SG_ DAS_autopilotState : 0|4@1+ (1,0) [0|0] "" GTW,APS,TAS2
+ SG_ DAS_blindSpotRearLeft : 4|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_blindSpotRearRight : 6|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_fusedSpeedLimit : 8|5@1+ (5,0) [0|150] "kph/mph" GTW,APS
+ SG_ DAS_suppressSpeedWarning : 13|1@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_summonObstacle : 14|1@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_summonClearedGate : 15|1@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_visionOnlySpeedLimit : 16|5@1+ (5,0) [0|150] "kph/mph" GTW,APS
+ SG_ DAS_heaterState : 21|1@1+ (1,0) [0|0] "" GTW
+ SG_ DAS_forwardCollisionWarning : 22|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_autoparkReady : 24|1@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_autoParked : 25|1@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_autoparkWaitingForBrake : 26|1@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_summonFwdLeashReached : 27|1@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_summonRvsLeashReached : 28|1@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_lssState : 29|3@1+ (1,0) [0|0] "" GTW,APS,EPB
+ SG_ DAS_sideCollisionAvoid : 32|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_sideCollisionWarning : 34|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_sideCollisionInhibit : 36|1@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_laneDepartureWarning : 37|3@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_fleetSpeedState : 40|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_autopilotHandsOnState : 42|4@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_autoLaneChangeState : 46|5@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_summonAvailable : 51|1@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_statusCounter : 52|4@1+ (1,0) [0|0] "" GTW,APS,TAS2
+ SG_ DAS_statusChecksum : 56|8@1+ (1,0) [0|0] "" GTW,APS,TAS2
 
 BO_ 905 DAS_status2: 8 XXX
- SG_ DAS_accSpeedLimit : 0|10@1+ (0.2,0) [0|204.6] "mph" XXX
- SG_ DAS_pmmObstacleSeverity : 10|3@1+ (1,0) [0|7] "" XXX
- SG_ DAS_pmmLoggingRequest : 13|1@1+ (1,0) [0|1] "" XXX
- SG_ DAS_activationFailureStatus : 14|2@1+ (1,0) [0|1] "" XXX
- SG_ DAS_pmmUltrasonicsFaultReason : 16|3@1+ (1,0) [0|7] "" XXX
- SG_ DAS_pmmRadarFaultReason : 19|2@1+ (1,0) [0|3] "" XXX
- SG_ DAS_pmmSysFaultReason : 21|3@1+ (1,0) [0|7] "" XXX
- SG_ DAS_pmmCameraFaultReason : 24|2@1+ (1,0) [0|3] "" XXX
- SG_ DAS_ACC_report : 26|5@1+ (1,0) [0|0] "" XXX
- SG_ DAS_lssState : 31|3@1+ (1,0) [0|0] "" XXX
- SG_ DAS_radarTelemetry : 34|2@1+ (1,0) [0|0] "" XXX
- SG_ DAS_robState : 36|2@1+ (1,0) [0|3] "" XXX
- SG_ DAS_driverInteractionLevel : 38|2@1+ (1,0) [0|3] "" XXX
- SG_ DAS_ppOffsetDesiredRamp : 40|8@1+ (0.01,-1.28) [-1.28|1.27] "m" XXX
- SG_ DAS_longCollisionWarning : 48|4@1+ (1,0) [0|15] "" XXX
- SG_ DAS_status2Counter : 52|4@1+ (1,0) [0|0] "" XXX
- SG_ DAS_status2Checksum : 56|8@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_accSpeedLimit : 0|10@1+ (0.2,0) [0|204.6] "mph" GTW,APS
+ SG_ DAS_pmmObstacleSeverity : 10|3@1+ (1,0) [0|7] "" GTW,APS
+ SG_ DAS_pmmLoggingRequest : 13|1@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_activationFailureStatus : 14|2@1+ (1,0) [0|1] "" GTW,APS
+ SG_ DAS_pmmUltrasonicsFaultReason : 16|3@1+ (1,0) [0|7] "" GTW,APS
+ SG_ DAS_pmmRadarFaultReason : 19|2@1+ (1,0) [0|3] "" GTW,APS
+ SG_ DAS_pmmSysFaultReason : 21|3@1+ (1,0) [0|7] "" GTW,APS
+ SG_ DAS_pmmCameraFaultReason : 24|2@1+ (1,0) [0|3] "" GTW,APS
+ SG_ DAS_ACC_report : 26|5@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_relaxCruiseLimits : 31|1@1+ (1,0) [0|0] "" GTW,APS,APP
+ SG_ DAS_csaState : 32|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_radarTelemetry : 34|2@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_robState : 36|2@1+ (1,0) [0|3] "" GTW,APS
+ SG_ DAS_driverInteractionLevel : 38|2@1+ (1,0) [0|3] "" GTW,APS
+ SG_ DAS_ppOffsetDesiredRamp : 40|8@1+ (0.01,-1.28) [-1.28|1.27] "m" GTW,APS
+ SG_ DAS_longCollisionWarning : 48|4@1+ (1,0) [0|15] "" GTW,APS
+ SG_ DAS_status2Counter : 52|4@1+ (1,0) [0|0] "" GTW,APS
+ SG_ DAS_status2Checksum : 56|8@1+ (1,0) [0|0] "" GTW,APS
 
 BO_ 937 DAS_telemetry: 8 XXX
  SG_ DAS_telemetryMultiplexer M : 0|8@1+ (1,0) [0|0] "" XXX
@@ -1020,7 +1021,7 @@ VAL_ 905 DAS_pmmRadarFaultReason 2 "PMM_RADAR_INVALID_MIA" 1 "PMM_RADAR_BLOCKED_
 VAL_ 905 DAS_pmmSysFaultReason 7 "PMM_FAULT_BRAKE_PEDAL_INHIBIT" 6 "PMM_FAULT_ROAD_TYPE" 5 "PMM_FAULT_DISABLED_BY_USER" 4 "PMM_FAULT_STEERING_ANGLE_RATE" 3 "PMM_FAULT_DI_FAULT" 2 "PMM_FAULT_SPEED" 1 "PMM_FAULT_DAS_DISABLED" 0 "PMM_FAULT_NONE" ;
 VAL_ 905 DAS_pmmCameraFaultReason 2 "PMM_CAMERA_INVALID_MIA" 1 "PMM_CAMERA_BLOCKED_FRONT" 0 "PMM_CAMERA_NO_FAULT" ;
 VAL_ 905 DAS_ACC_report 24 "ACC_REPORT_BEHAVIOR_REPORT" 23 "ACC_REPORT_CAMERA_ONLY" 22 "ACC_REPORT_RADAR_OBJ_FIVE" 21 "ACC_REPORT_CIPV_CUTTING_OUT" 20 "ACC_REPORT_MCVLR_IN_PATH" 19 "ACC_REPORT_MCVLR_DPP" 18 "ACC_REPORT_FLEET_SPEEDS" 17 "ACC_REPORT_TARGET_MCP" 16 "ACC_REPORT_RADAR_OBJ_TWO" 15 "ACC_REPORT_RADAR_OBJ_ONE" 14 "ACC_REPORT_LC_EXTERNAL_STATE_ACTIVE_RESTRICTED" 13 "ACC_REPORT_LC_EXTERNAL_STATE_ABORTED" 12 "ACC_REPORT_LC_EXTERNAL_STATE_ABORTING" 11 "ACC_REPORT_LC_HANDS_ON_REQD_STRUCK_OUT" 10 "ACC_REPORT_CSA" 9 "ACC_REPORT_TARGET_TYPE_FAULT" 8 "ACC_REPORT_TARGET_TYPE_IPSO" 7 "ACC_REPORT_TARGET_TYPE_TRAFFIC_LIGHT" 6 "ACC_REPORT_TARGET_TYPE_STOP_SIGN" 5 "ACC_REPORT_TARGET_CUTIN" 4 "ACC_REPORT_TARGET_MCVR" 3 "ACC_REPORT_TARGET_MCVL" 2 "ACC_REPORT_TARGET_IN_FRONT_OF_CIPV" 1 "ACC_REPORT_TARGET_CIPV" 0 "ACC_REPORT_TARGET_NONE" ;
-VAL_ 905 DAS_lssState 7 "LSS_STATE_OFF" 6 "LSS_STATE_ABORT" 5 "LSS_STATE_BLINDSPOT" 4 "LSS_STATE_MONITOR" 3 "LSS_STATE_ELK" 2 "LSS_STATE_LKA" 1 "LSS_STATE_LDW" 0 "LSS_STATE_FAULT" ;
+VAL_ 921 DAS_lssState 7 "LSS_STATE_OFF" 6 "LSS_STATE_ABORT" 5 "LSS_STATE_BLINDSPOT" 4 "LSS_STATE_MONITOR" 3 "LSS_STATE_ELK" 2
 VAL_ 905 DAS_radarTelemetry 2 "RADAR_TELEMETRY_URGENT" 1 "RADAR_TELEMETRY_NORMAL" 0 "RADAR_TELEMETRY_IDLE" ;
 VAL_ 905 DAS_robState 3 "ROB_STATE_MAPLESS" 2 "ROB_STATE_ACTIVE" 1 "ROB_STATE_MEASURE" 0 "ROB_STATE_INHIBITED" ;
 VAL_ 905 DAS_driverInteractionLevel 2 "CONTINUED_DRIVER_NOT_INTERACTING" 1 "DRIVER_NOT_INTERACTING" 0 "DRIVER_INTERACTING" ;
@@ -1038,7 +1039,7 @@ VAL_ 921 DAS_autoparkReady 1 "AUTOPARK_READY" 0 "AUTOPARK_UNAVAILABLE" ;
 VAL_ 921 DAS_sideCollisionAvoid 3 "SNA" 2 "AVOID_RIGHT" 1 "AVOID_LEFT" 0 "NONE" ;
 VAL_ 921 DAS_sideCollisionWarning 3 "WARN_LEFT_RIGHT" 2 "WARN_RIGHT" 1 "WARN_LEFT" 0 "NONE" ;
 VAL_ 921 DAS_sideCollisionInhibit 1 "INHIBIT" 0 "NO_INHIBIT" ;
-VAL_ 921 DAS_csaState 3 "CSA_EXTERNAL_STATE_HOLD" 2 "CSA_EXTERNAL_STATE_ENABLE" 1 "CSA_EXTERNAL_STATE_AVAILABLE" 0 "CSA_EXTERNAL_STATE_UNAVAILABLE" ;
+VAL_ 905 DAS_csaState 3 "CSA_EXTERNAL_STATE_HOLD" 2 "CSA_EXTERNAL_STATE_ENABLE" 1 "CSA_EXTERNAL_STATE_AVAILABLE" 0 "CSA_EXTERNAL_STATE_UNAVAILABLE" ;
 VAL_ 921 DAS_laneDepartureWarning 5 "SNA" 4 "RIGHT_WARNING_SEVERE" 3 "LEFT_WARNING_SEVERE" 2 "RIGHT_WARNING" 1 "LEFT_WARNING" 0 "NONE" ;
 VAL_ 921 DAS_fleetSpeedState 3 "FLEETSPEED_HOLD" 2 "FLEETSPEED_ACTIVE" 1 "FLEETSPEED_AVAILABLE" 0 "FLEETSPEED_UNAVAILABLE" ;
 VAL_ 921 DAS_autopilotHandsOnState 15 "LC_HANDS_ON_SNA" 8 "LC_HANDS_ON_SUSPENDED" 7 "LC_HANDS_ON_REQD_STRUCK_OUT" 5 "LC_HANDS_ON_REQD_CHIME_2" 4 "LC_HANDS_ON_REQD_CHIME_1" 3 "LC_HANDS_ON_REQD_VISUAL" 2 "LC_HANDS_ON_REQD_NOT_DETECTED" 1 "LC_HANDS_ON_REQD_DETECTED" 0 "LC_HANDS_ON_NOT_REQD" ;
