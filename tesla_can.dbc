@@ -189,6 +189,22 @@ BO_ 532 EPB_epasControl: 3 EPB
  SG_ EPB_epasControlCounter : 11|4@0+ (1,0) [0|15] ""  XXX
  SG_ EPB_epasEACAllow : 2|3@0+ (1,0) [4|7] ""  XXX
 
+BO_ 782 PARK_status2: 8 PARK
+ SG_ PARK_frontSVACharID : 0|6@1+ (1,0) [0|63] "" DAS,GTW
+ SG_ PARK_pscRightCurbType : 6|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_rearSVACharID : 8|6@1+ (1,0) [0|63] "" DAS,GTW
+ SG_ PARK_pscLeftCurbType : 14|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_autoCalComplete : 16|1@1+ (1,0) [0|1] "" DAS,GTW
+ SG_ PARK_geometryType : 17|2@1+ (1,0) [0|3] "" GTW
+ SG_ PARK_tireFitment : 19|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_rackDetected : 21|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_sdiActive : 24|1@1+ (1,0) [0|1] "" DAS,GTW
+ SG_ PARK_sdiNoise : 25|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_sdiBlindSpotRight : 27|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_sdiBlindSpotLeft : 29|2@1+ (1,0) [0|3] "" DAS,GTW
+ SG_ PARK_status2Counter : 52|4@1+ (1,0) [0|0] "" GTW,DAS
+ SG_ PARK_status2Checksum : 56|8@1+ (1,0) [0|0] "" GTW
+
 BO_ 792 GTW_carState: 8 XXX
  SG_ YEAR : 0|7@1+ (1,2000) [2000|2127] "Year" XXX
  SG_ CERRD : 7|1@1+ (1,0) [0|1] "" XXX
@@ -978,6 +994,16 @@ VAL_ 777 DAS_leftVeh2Heading 255 "SNA" ;
 VAL_ 777 DAS_rightVehHeading 255 "SNA" ;
 VAL_ 777 DAS_rightVeh2Heading 255 "SNA" ;
 VAL_ 777 DAS_cutinVehHeading 255 "SNA" ;
+VAL_ 782 PARK_pscRightCurbType 2 "HIGH_CURB" 1 "LOW_CURB" 0 "VIRTUAL_CURB" ;
+VAL_ 782 PARK_pscLeftCurbType 2 "HIGH_CURB" 1 "LOW_CURB" 0 "VIRTUAL_CURB" ;
+VAL_ 782 PARK_autoCalComplete 1 "COMPLETE" 0 "INCOMPLETE" ;
+VAL_ 782 PARK_geometryType 2 "MODELX" 1 "MODELS_2" 0 "MODELS" ;
+VAL_ 782 PARK_tireFitment 3 "SNA" 1 "STAGGERED" 0 "SQUARE" ;
+VAL_ 782 PARK_rackDetected 3 "SNA" 2 "RACK_DETECTED" 1 "NO_RACK" 0 "UNKNOWN" ;
+VAL_ 782 PARK_sdiActive 1 "SDI_ENABLED" 0 "SDI_DISABLED" ;
+VAL_ 782 PARK_sdiNoise 3 "SDI_NOISE_SNA" 2 "SDI_NOISE_RAIN" 1 "SDI_NOISE_HIGH" 0 "SDI_NOISE_NOMINAL" ;
+VAL_ 782 PARK_sdiBlindSpotRight 3 "SNA" 2 "UNUSED" 1 "WARNING" 0 "NO_WARNING" ;
+VAL_ 782 PARK_sdiBlindSpotLeft 3 "SNA" 2 "UNUSED" 1 "WARNING" 0 "NO_WARNING" ;
 VAL_ 792 BOOT_STATE 2 "Init" 3 "SNA" 0 "closed" 1 "open" ;
 VAL_ 792 CERRD 1 "CAN error detect" 0 "no Can error detected" ;
 VAL_ 792 DAY 1 "Init" 0 "SNA" ;
