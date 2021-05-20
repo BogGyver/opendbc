@@ -328,6 +328,31 @@ BO_ 1163 RSA3: 8 FCM
  SG_ OVSPVALH : 27|4@0+ (1,-5) [0|0] "" XXX
  SG_ TSRSPU : 33|2@0+ (1,0) [0|0] "" XXX
 
+BO_ 800 VSC1S07: 8 CGW
+ SG_ FBKRLY : 6|1@0+ (1,0) [0|0] "" DS1
+ SG_ FVSCM : 4|1@0+ (1,0) [0|0] "" DS1
+ SG_ FVSCSFT : 3|1@0+ (1,0) [0|0] "" DS1
+ SG_ FABS : 2|1@0+ (1,0) [0|0] "" DS1,FCM
+ SG_ TSVSC : 1|1@0+ (1,0) [0|0] "" DS1
+ SG_ FVSCL : 0|1@0+ (1,0) [0|0] "" DS1
+ SG_ RQCSTBKB : 15|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PSBSTBY : 14|1@0+ (1,0) [0|0] "" DS1
+ SG_ P2BRXMK : 13|1@0+ (1,0) [0|0] "" DS1
+ SG_ MCC : 11|1@0+ (1,0) [0|0] "" DS1
+ SG_ RQBKB : 10|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRSTOP : 9|1@0+ (1,0) [0|0] "" DS1,FCM
+ SG_ BRKON : 8|1@0+ (1,0) [0|0] "" DS1,FCM
+ SG_ ASLP : 23|8@0- (1,0) [0|0] "deg" DS1
+ SG_ BRTYPACC : 31|2@0+ (1,0) [0|0] "" DS1
+ SG_ BRKABT3 : 26|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRKABT2 : 25|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRKABT1 : 24|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ GVC : 39|8@0- (0.04,0) [0|0] "m/s^2" DS1
+ SG_ XGVCINV : 43|1@0+ (1,0) [0|0] "" DS1
+ SG_ S07CNT : 52|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PCSBRSTA : 50|2@0+ (1,0) [0|0] "" DS1
+ SG_ VSC07SUM : 63|8@0+ (1,0) [0|0] "" DS1,FCM
+
 CM_ SG_ 36 ACCEL_Y "unit is tbd";
 CM_ SG_ 36 YAW_RATE "verify";
 CM_ SG_ 36 STEERING_TORQUE "does not seem the steer torque, tbd";
