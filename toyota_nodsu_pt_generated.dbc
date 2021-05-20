@@ -45,6 +45,40 @@ CM_ "BO_ STEERING_IPAS_COMMA: Copy of msg 614 so we can do angle control while t
   SG_ COUNTER_PEDAL : 35|4@0+ (1,0) [0|15] "" EON
   SG_ CHECKSUM_PEDAL : 47|8@0+ (1,0) [0|255] "" EON
 
+BO_ 241 ACC_CONTROL_ALT: 8 EON
+ SG_ ACCEL_CMD : 7|16@0- (0.001,0) [-20|20] "m/s2" HCU
+ SG_ SET_ME_X01 : 23|2@0+ (1,0) [0|3] "" HCU
+ SG_ DISTANCE : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ MINI_CAR : 21|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_ME_X3 : 19|4@0+ (1,0) [0|15] "" XXX
+ SG_ PERMIT_BRAKING : 30|1@0+ (1,0) [0|1] "" HCU
+ SG_ RELEASE_STANDSTILL : 31|1@0+ (1,0) [0|1] "" HCU
+ SG_ CANCEL_REQ : 24|1@0+ (1,0) [0|1] "" HCU
+ SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
+ SG_ ACCEL_CMD_ALT : 47|8@0- (0.05,0) [0|0] "m/s^2" XXX
+
+BO_ 242 PRECOLLISION_2_ALT: 8 EON
+ SG_ DECELERATION : 7|10@0- (0.1,0) [0|0] "m/s^2" Vector__XXX
+ SG_ DS1STAT2 : 13|3@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ DS1STBK2 : 10|3@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PCSWAR : 18|1@0+ (1,0) [0|0] "" FCM
+ SG_ PCSALM : 17|1@0+ (1,0) [0|0] "" FCM
+ SG_ PCSOPR : 16|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PCSABK : 31|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PBATRGR : 30|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PPTRGR : 28|1@0+ (1,0) [0|0] "" FCM
+ SG_ IBTRGR : 27|1@0+ (1,0) [0|0] "" FCM
+ SG_ CLEXTRGR : 26|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ IRLT_REQ : 25|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRKHLD : 37|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ AVSTRGR : 36|1@0+ (1,0) [0|0] "" SCS
+ SG_ VGRSTRGR : 35|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PREFILL : 33|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PBRTRGR : 32|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PCSDIS : 43|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PBPREPMP : 40|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ CHECKSUM : 63|8@0+ (1,0) [0|0] "" FCM
+
  VAL_ 513 STATE 5 "FAULT_TIMEOUT" 4 "FAULT_STARTUP" 3 "FAULT_SCE" 2 "FAULT_SEND" 1 "FAULT_BAD_CHECKSUM" 0 "NO_FAULT" ;
 
 BO_ 35 SECONDARY_STEER_ANGLE: 8 XXX
