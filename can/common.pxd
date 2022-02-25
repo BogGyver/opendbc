@@ -52,7 +52,6 @@ cdef extern from "common_dbc.h":
   cdef struct SignalParseOptions:
     uint32_t address
     const char* name
-    double default_value
 
 
   cdef struct MessageParseOptions:
@@ -61,12 +60,12 @@ cdef extern from "common_dbc.h":
 
   cdef struct SignalValue:
     uint32_t address
-    uint16_t ts
     const char* name
     double value
+    vector[double] all_values
 
   cdef struct SignalPackValue:
-    const char * name
+    string name
     double value
 
 

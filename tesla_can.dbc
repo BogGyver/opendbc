@@ -34,7 +34,17 @@ NS_ :
 BS_:
 
 BU_:
-    XXX
+	NEO
+	MCU
+	GTW
+	EPAS
+	DI
+	ESP
+	SBW
+	STW
+	APP
+	DAS
+	XXX
 
 VAL_TABLE_ StW_AnglHP_Spd 16383 "SNA" ;
 VAL_TABLE_ DI_aebFaultReason 15 "DI_AEB_FAULT_DAS_REQ_DI_UNAVAIL" 14 "DI_AEB_FAULT_ACCEL_REQ_INVALID" 13 "DI_AEB_FAULT_MIN_TIME_BTWN_EVENTS" 12 "DI_AEB_FAULT_ESP_MIA" 11 "DI_AEB_FAULT_ESP_FAULT" 10 "DI_AEB_FAULT_EPB_NOT_PARKED" 9 "DI_AEB_FAULT_ACCEL_OUT_OF_BOUNDS" 8 "DI_AEB_FAULT_PM_REQUEST" 7 "DI_AEB_FAULT_VEL_EST_ABNORMAL" 6 "DI_AEB_FAULT_DAS_SNA" 5 "DI_AEB_FAULT_DAS_CONTROL_MIA" 4 "DI_AEB_FAULT_SPEED_DELTA" 3 "DI_AEB_FAULT_EBR_FAULT" 2 "DI_AEB_FAULT_PM_MIA" 1 "DI_AEB_FAULT_EPB_MIA" 0 "DI_AEB_FAULT_NONE" ;
@@ -88,101 +98,118 @@ BO_ 1160 DAS_steeringControl: 4 XXX
  SG_ DAS_steeringAngleRequest : 6|15@0+ (0.1,-1638.35) [-1638.35|1638.35] "deg" XXX
  SG_ DAS_steeringHapticRequest : 7|1@0+ (1,0) [0|0] "" XXX
 
-BO_ 257 GTW_epasControl: 3 XXX
- SG_ GTW_epasControlChecksum : 23|8@0+ (1,0) [0|255] ""  XXX
- SG_ GTW_epasControlCounter : 11|4@0+ (1,0) [0|15] ""  XXX
- SG_ GTW_epasControlType : 15|2@0+ (1,0) [-1|4] ""  XXX
- SG_ GTW_epasEmergencyOn : 7|1@0+ (1,0) [-1|2] ""  XXX
- SG_ GTW_epasLDWEnabled : 12|1@0+ (1,0) [-1|2] ""  XXX
- SG_ GTW_epasPowerMode : 6|4@0+ (1,0) [4|14] ""  XXX
- SG_ GTW_epasTuneRequest : 2|3@0+ (1,0) [-1|8] ""  XXX
+BO_ 1160 DAS_steeringControl: 4 NEO
+ SG_ DAS_steeringControlType : 23|2@0+ (1,0) [0|0] "" EPAS
+ SG_ DAS_steeringControlChecksum : 31|8@0+ (1,0) [0|0] "" EPAS
+ SG_ DAS_steeringControlCounter : 19|4@0+ (1,0) [0|0] "" EPAS
+ SG_ DAS_steeringAngleRequest : 6|15@0+ (0.1,-1638.35) [-1638.35|1638.35] "deg" EPAS
+ SG_ DAS_steeringHapticRequest : 7|1@0+ (1,0) [0|0] "" EPAS
 
-BO_ 880 EPAS_sysStatus: 8 XXX
- SG_ EPAS_currentTuneMode : 7|4@0+ (1,0) [8|15] ""  XXX
- SG_ EPAS_eacErrorCode : 23|4@0+ (1,0) [-1|16] ""  XXX
- SG_ EPAS_eacStatus : 55|3@0+ (1,0) [5|7] ""  XXX
- SG_ EPAS_handsOnLevel : 39|2@0+ (1,0) [-1|4] ""  XXX
- SG_ EPAS_internalSAS : 37|14@0+ (0.1,-819.200012) [0|0] "deg"  XXX
- SG_ EPAS_steeringFault : 2|1@0+ (1,0) [-1|2] ""  XXX
- SG_ EPAS_steeringRackForce : 1|10@0+ (50,-25575) [0|0] "N" XXX
- SG_ EPAS_steeringReduced : 3|1@0+ (1,0) [-1|2] ""  XXX
- SG_ EPAS_sysStatusChecksum : 63|8@0+ (1,0) [0|255] ""  XXX
- SG_ EPAS_sysStatusCounter : 51|4@0+ (1,0) [0|15] ""  XXX
- SG_ EPAS_torsionBarTorque : 19|12@0+ (0.01,-20.5) [0|0] "Nm"  XXX
+BO_ 697 DAS_control: 8 NEO
+ SG_ DAS_setSpeed : 0|12@1+ (0.1,0) [0|409.4] "kph" NEO
+ SG_ DAS_accState : 12|4@1+ (1,0) [0|0] "" NEO
+ SG_ DAS_aebEvent : 16|2@1+ (1,0) [0|3] "" NEO
+ SG_ DAS_jerkMin : 18|9@1+ (0.03,-15.232) [-15.232|0.098] "m/s^3" NEO
+ SG_ DAS_jerkMax : 27|8@1+ (0.059,0) [0|15.045] "m/s^3" NEO
+ SG_ DAS_accelMin : 35|9@1+ (0.04,-15) [-15|5.44] "m/s^2" NEO
+ SG_ DAS_accelMax : 44|9@1+ (0.04,-15) [-15|5.44] "m/s^2" NEO
+ SG_ DAS_controlCounter : 53|3@1+ (1,0) [0|0] "" NEO
+ SG_ DAS_controlChecksum : 56|8@1+ (1,0) [0|0] "" NEO
 
-BO_ 3 STW_ANGL_STAT: 8 XXX
- SG_ StW_Angl : 5|14@0+ (0.5,-2048) [0|0] "deg"  XXX
- SG_ StW_AnglSpd : 21|14@0+ (0.5,-2048) [0|0] "/s"  XXX
- SG_ StW_AnglSens_Stat : 33|2@0+ (1,0) [-1|4] ""  XXX
- SG_ StW_AnglSens_Id : 35|2@0+ (1,0) [3|3] ""  XXX
- SG_ MC_STW_ANGL_STAT : 55|4@0+ (1,0) [0|15] ""  XXX
- SG_ CRC_STW_ANGL_STAT : 63|8@0+ (1,0) [0|255] ""  XXX
+BO_ 257 GTW_epasControl: 3 NEO
+ SG_ GTW_epasControlChecksum : 23|8@0+ (1,0) [0|255] ""  NEO
+ SG_ GTW_epasControlCounter : 11|4@0+ (1,0) [0|15] ""  NEO
+ SG_ GTW_epasControlType : 15|2@0+ (1,0) [-1|4] ""  NEO
+ SG_ GTW_epasEmergencyOn : 7|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ GTW_epasLDWEnabled : 12|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ GTW_epasPowerMode : 6|4@0+ (1,0) [4|14] ""  NEO
+ SG_ GTW_epasTuneRequest : 2|3@0+ (1,0) [-1|8] ""  NEO
 
-BO_ 14 STW_ANGLHP_STAT: 8 XXX
+BO_ 880 EPAS_sysStatus: 8 EPAS
+ SG_ EPAS_currentTuneMode : 7|4@0+ (1,0) [8|15] ""  NEO
+ SG_ EPAS_eacErrorCode : 23|4@0+ (1,0) [-1|16] ""  NEO
+ SG_ EPAS_eacStatus : 55|3@0+ (1,0) [5|7] ""  NEO
+ SG_ EPAS_handsOnLevel : 39|2@0+ (1,0) [-1|4] ""  NEO
+ SG_ EPAS_internalSAS : 37|14@0+ (0.1,-819.200012) [0|0] "deg"  NEO
+ SG_ EPAS_steeringFault : 2|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ EPAS_steeringRackForce : 1|10@0+ (50,-25575) [0|0] "N" NEO
+ SG_ EPAS_steeringReduced : 3|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ EPAS_sysStatusChecksum : 63|8@0+ (1,0) [0|255] ""  NEO
+ SG_ EPAS_sysStatusCounter : 51|4@0+ (1,0) [0|15] ""  NEO
+ SG_ EPAS_torsionBarTorque : 19|12@0+ (0.01,-20.5) [0|0] "Nm"  NEO
 
- SG_ StW_AnglHP : 5|14@0+ (0.1,-819.2) [-819.2|819] "deg"  XXX
- SG_ StW_AnglHP_Spd : 21|14@0+ (0.5,-4096) [-4096|4095.5] "deg/s"  XXX
- SG_ StW_AnglHP_Sens_Stat : 33|2@0+ (1,0) [0|0] ""  XXX
- SG_ StW_AnglHP_Sens_Id : 35|2@0+ (1,0) [0|0] ""  XXX
- SG_ MC_STW_ANGLHP_STAT : 55|4@0+ (1,0) [0|15] ""  XXX
- SG_ CRC_STW_ANGLHP_STAT : 63|8@0+ (1,0) [0|0] ""  XXX
+BO_ 3 STW_ANGL_STAT: 8 STW
+ SG_ StW_Angl : 5|14@0+ (0.5,-2048) [0|0] "deg"  NEO
+ SG_ StW_AnglSpd : 21|14@0+ (0.5,-2048) [0|0] "/s"  NEO
+ SG_ StW_AnglSens_Stat : 33|2@0+ (1,0) [-1|4] ""  NEO
+ SG_ StW_AnglSens_Id : 35|2@0+ (1,0) [3|3] ""  NEO
+ SG_ MC_STW_ANGL_STAT : 55|4@0+ (1,0) [0|15] ""  NEO
+ SG_ CRC_STW_ANGL_STAT : 63|8@0+ (1,0) [0|255] ""  NEO
 
-BO_ 264 DI_torque1: 8 XXX
- SG_ DI_torqueDriver : 0|13@1- (0.25,0) [-750|750] "Nm"  XXX
- SG_ DI_torque1Counter : 13|3@1+ (1,0) [0|0] ""  XXX
- SG_ DI_torqueMotor : 16|13@1- (0.25,0) [-750|750] "Nm"  XXX
- SG_ DI_soptState : 29|3@1+ (1,0) [0|0] ""  XXX
- SG_ DI_motorRPM : 32|16@1- (1,0) [-17000|17000] "RPM"  XXX
- SG_ DI_pedalPos : 48|8@1+ (0.4,0) [0|100] "%"  XXX
- SG_ DI_torque1Checksum : 56|8@1+ (1,0) [0|0] ""  XXX
+BO_ 14 STW_ANGLHP_STAT: 8 STW
+ SG_ StW_AnglHP : 5|14@0+ (0.1,-819.2) [-819.2|819] "deg"  NEO
+ SG_ StW_AnglHP_Spd : 21|14@0+ (0.5,-4096) [-4096|4095.5] "deg/s"  NEO
+ SG_ StW_AnglHP_Sens_Stat : 33|2@0+ (1,0) [0|0] ""  NEO
+ SG_ StW_AnglHP_Sens_Id : 35|2@0+ (1,0) [0|0] ""  NEO
+ SG_ MC_STW_ANGLHP_STAT : 55|4@0+ (1,0) [0|15] ""  NEO
+ SG_ CRC_STW_ANGLHP_STAT : 63|8@0+ (1,0) [0|0] ""  NEO
 
-BO_ 280 DI_torque2: 6 XXX
- SG_ DI_torqueEstimate : 0|12@1- (0.5,0) [-750|750] "Nm" XXX
- SG_ DI_gear : 12|3@1+ (1,0) [0|0] "" XXX
- SG_ DI_brakePedal : 15|1@1+ (1,0) [0|0] "" XXX
- SG_ DI_vehicleSpeed : 16|12@1+ (0.05,-25) [-25|179.75] "MPH" XXX
- SG_ DI_gearRequest : 28|3@1+ (1,0) [0|0] "" XXX
- SG_ DI_torqueInterfaceFailure : 31|1@1+ (1,0) [0|0] "" XXX
- SG_ DI_torque2Counter : 32|4@1+ (1,0) [0|0] "" XXX
- SG_ DI_brakePedalState : 36|2@1+ (1,0) [0|0] "" XXX
- SG_ DI_epbParkRequest : 38|1@1+ (1,0) [0|0] "" XXX
- SG_ DI_epbInterfaceReady : 39|1@1+ (1,0) [0|0] "" XXX
- SG_ DI_torque2Checksum : 40|8@1+ (1,0) [0|0] "" XXX
+BO_ 264 DI_torque1: 8 DI
+ SG_ DI_torqueDriver : 0|13@1- (0.25,0) [-750|750] "Nm"  NEO
+ SG_ DI_torque1Counter : 13|3@1+ (1,0) [0|0] ""  NEO
+ SG_ DI_torqueMotor : 16|13@1- (0.25,0) [-750|750] "Nm"  NEO
+ SG_ DI_soptState : 29|3@1+ (1,0) [0|0] ""  NEO
+ SG_ DI_motorRPM : 32|16@1- (1,0) [-17000|17000] "RPM"  NEO
+ SG_ DI_pedalPos : 48|8@1+ (0.4,0) [0|100] "%"  NEO
+ SG_ DI_torque1Checksum : 56|8@1+ (1,0) [0|0] ""  NEO
 
-BO_ 309 ESP_135h: 5 XXX
- SG_ ESP_135hChecksum : 23|8@0+ (1,0) [0|255] ""  XXX
- SG_ ESP_135hCounter : 11|4@0+ (1,0) [0|15] ""  XXX
- SG_ ESP_absBrakeEvent : 2|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_brakeDiscWipingActive : 4|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_brakeLamp : 3|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_espFaultLamp : 6|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_espLampFlash : 7|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_hillStartAssistActive : 1|2@0+ (1,0) [-1|4] ""  XXX
- SG_ ESP_messagePumpService : 24|1@0+ (1,0) [0|1] ""  XXX
- SG_ ESP_messagePumpFailure : 25|1@0+ (1,0) [0|1] ""  XXX
- SG_ ESP_messageEBDFailure : 26|1@0+ (1,0) [0|1] ""  XXX
- SG_ ESP_absFaultLamp : 27|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_tcDisabledByFault : 28|1@0+ (1,0) [0|1] ""  XXX
- SG_ ESP_messageDynoModeActive : 29|1@0+ (1,0) [0|1] ""  XXX
- SG_ ESP_hydraulicBoostEnabled : 30|1@0+ (1,0) [0|1] ""  XXX
- SG_ ESP_espOffLamp : 31|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_stabilityControlSts : 14|3@0+ (1,0) [6|7] ""  XXX
- SG_ ESP_tcLampFlash : 5|1@0+ (1,0) [-1|2] ""  XXX
- SG_ ESP_tcOffLamp : 15|1@0+ (1,0) [0|1] ""  XXX
+BO_ 280 DI_torque2: 6 DI
+ SG_ DI_torqueEstimate : 0|12@1- (0.5,0) [-750|750] "Nm" NEO
+ SG_ DI_gear : 12|3@1+ (1,0) [0|0] "" NEO
+ SG_ DI_brakePedal : 15|1@1+ (1,0) [0|0] "" NEO
+ SG_ DI_vehicleSpeed : 16|12@1+ (0.05,-25) [-25|179.75] "MPH" NEO
+ SG_ DI_gearRequest : 28|3@1+ (1,0) [0|0] "" NEO
+ SG_ DI_torqueInterfaceFailure : 31|1@1+ (1,0) [0|0] "" NEO
+ SG_ DI_torque2Counter : 32|4@1+ (1,0) [0|0] "" NEO
+ SG_ DI_brakePedalState : 36|2@1+ (1,0) [0|0] "" NEO
+ SG_ DI_epbParkRequest : 38|1@1+ (1,0) [0|0] "" NEO
+ SG_ DI_epbInterfaceReady : 39|1@1+ (1,0) [0|0] "" NEO
+ SG_ DI_torque2Checksum : 40|8@1+ (1,0) [0|0] "" NEO
 
-BO_ 341 ESP_B: 8 XXX
- SG_ ESP_BChecksum : 39|8@0+ (1,0) [0|255] ""  XXX
- SG_ ESP_BCounter : 62|4@0+ (1,0) [1|15] ""  XXX
- SG_ ESP_vehicleSpeed : 47|16@0+ (0.00999999978,0) [0|0] "kph"  XXX
- SG_ ESP_vehicleSpeedQF : 57|2@0+ (1,0) [1|2] ""  XXX
- SG_ ESP_wheelPulseCountFrL : 7|8@0+ (1,0) [0|254] ""  XXX
- SG_ ESP_wheelPulseCountFrR : 15|8@0+ (1,0) [0|254] ""  XXX
- SG_ ESP_wheelPulseCountReL : 23|8@0+ (1,0) [0|254] ""  XXX
- SG_ ESP_wheelPulseCountReR : 31|8@0+ (1,0) [0|254] ""  XXX
+BO_ 309 ESP_135h: 5 ESP
+ SG_ ESP_135hChecksum : 23|8@0+ (1,0) [0|255] ""  NEO
+ SG_ ESP_135hCounter : 11|4@0+ (1,0) [0|15] ""  NEO
+ SG_ ESP_absBrakeEvent : 2|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_brakeDiscWipingActive : 4|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_brakeLamp : 3|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_espFaultLamp : 6|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_espLampFlash : 7|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_hillStartAssistActive : 1|2@0+ (1,0) [-1|4] ""  NEO
+ SG_ ESP_messagePumpService : 24|1@0+ (1,0) [0|1] ""  NEO
+ SG_ ESP_messagePumpFailure : 25|1@0+ (1,0) [0|1] ""  NEO
+ SG_ ESP_messageEBDFailure : 26|1@0+ (1,0) [0|1] ""  NEO
+ SG_ ESP_absFaultLamp : 27|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_tcDisabledByFault : 28|1@0+ (1,0) [0|1] ""  NEO
+ SG_ ESP_messageDynoModeActive : 29|1@0+ (1,0) [0|1] ""  NEO
+ SG_ ESP_hydraulicBoostEnabled : 30|1@0+ (1,0) [0|1] ""  NEO
+ SG_ ESP_espOffLamp : 31|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_stabilityControlSts : 14|3@0+ (1,0) [6|7] ""  NEO
+ SG_ ESP_tcLampFlash : 5|1@0+ (1,0) [-1|2] ""  NEO
+ SG_ ESP_tcOffLamp : 15|1@0+ (1,0) [0|1] ""  NEO
 
-BO_ 513 SDM1: 5 XXX
- SG_ SDM_bcklPassStatus : 3|2@0+ (1,0) [0|3] "" XXX
- SG_ SDM_bcklDrivStatus : 5|2@0+ (1,0) [0|3] "" XXX
+BO_ 341 ESP_B: 8 ESP
+ SG_ ESP_BChecksum : 39|8@0+ (1,0) [0|255] ""  NEO,EPAS
+ SG_ ESP_BCounter : 62|4@0+ (1,0) [1|15] ""  NEO,EPAS
+ SG_ ESP_vehicleSpeed : 47|16@0+ (0.00999999978,0) [0|0] "kph"  NEO,EPAS
+ SG_ ESP_vehicleSpeedQF : 57|2@0+ (1,0) [1|2] ""  NEO,EPAS
+ SG_ ESP_wheelPulseCountFrL : 7|8@0+ (1,0) [0|254] ""  NEO,EPAS
+ SG_ ESP_wheelPulseCountFrR : 15|8@0+ (1,0) [0|254] ""  NEO,EPAS
+ SG_ ESP_wheelPulseCountReL : 23|8@0+ (1,0) [0|254] ""  NEO,EPAS
+ SG_ ESP_wheelPulseCountReR : 31|8@0+ (1,0) [0|254] ""  NEO,EPAS
+
+BO_ 513 SDM1: 5 GTW
+ SG_ SDM_bcklPassStatus : 3|2@0+ (1,0) [0|3] "" NEO
+ SG_ SDM_bcklDrivStatus : 5|2@0+ (1,0) [0|3] "" NEO
 
 BO_ 532 EPB_epasControl: 3 EPB
  SG_ EPB_epasControlChecksum : 23|8@0+ (1,0) [0|255] ""  XXX
@@ -1151,4 +1178,3 @@ VAL_ 1160 DAS_steeringHapticRequest 1 "ACTIVE" 0 "IDLE" ;
 VAL_ 1362 STATE 5 "FAULT_TIMEOUT" 4 "FAULT_STARTUP" 3 "FAULT_SCE" 2 "FAULT_SEND" 1 "FAULT_BAD_CHECKSUM" 0 "NO_FAULT" ;
 
 
-CM_ "CHFFR_METRIC 1160 DAS_steeringAngleRequest STEER_ANGLE 0.1098666 180; CHFFR_METRIC 264 DI_motorRPM ENGINE_RPM 1 0";

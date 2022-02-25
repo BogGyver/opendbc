@@ -33,19 +33,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 ENV PATH="/root/.pyenv/bin:/root/.pyenv/shims:${PATH}"
-RUN pyenv install 3.8.5
-RUN pyenv global 3.8.5
+RUN pyenv install 3.8.10
+RUN pyenv global 3.8.10
 RUN pyenv rehash
 
 COPY requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
-RUN pip install --no-cache-dir pre-commit==2.4.0 pylint==2.5.2
+RUN pip install --no-cache-dir pre-commit==2.15.0 pylint==2.5.2
 
 ENV PYTHONPATH=/project
 
 WORKDIR /project
 # TODO: Add tag to cereal
-RUN git clone https://github.com/commaai/cereal.git /project/cereal
+RUN git clone https://github.com/commaai/cereal.git /project/cereal && cd /project/cereal && git checkout d46f37c314bb92306207db44693b2f58c31f66b9
 
 COPY SConstruct .
 COPY ./site_scons /project/site_scons

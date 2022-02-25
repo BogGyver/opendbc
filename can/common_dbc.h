@@ -8,14 +8,13 @@
 #define ARRAYSIZE(x) (sizeof(x)/sizeof(x[0]))
 
 struct SignalPackValue {
-  const char* name;
+  std::string name;
   double value;
 };
 
 struct SignalParseOptions {
   uint32_t address;
   const char* name;
-  double default_value;
 };
 
 struct MessageParseOptions {
@@ -25,9 +24,9 @@ struct MessageParseOptions {
 
 struct SignalValue {
   uint32_t address;
-  uint16_t ts;
   const char* name;
-  double value;
+  double value;  // latest value
+  std::vector<double> all_values;  // all values from this cycle
 };
 
 enum SignalType {

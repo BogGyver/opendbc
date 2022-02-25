@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sysconfig
+import numpy as np
 
 zmq = 'zmq'
 arch = subprocess.check_output(["uname", "-m"], encoding='utf8').rstrip()
@@ -38,6 +39,7 @@ env = Environment(
     "-O2",
     "-Wunused",
     "-Werror",
+    "-Wshadow",
   ] + ccflags_asan,
   LDFLAGS=ldflags_asan,
   LINKFLAGS=ldflags_asan,
@@ -52,7 +54,8 @@ env = Environment(
 )
 
 QCOM_REPLAY = False
-Export('env', 'zmq', 'arch', 'QCOM_REPLAY')
+common = ''
+Export('env', 'zmq', 'arch', 'QCOM_REPLAY', 'common')
 
 cereal = [File('#cereal/libcereal.a')]
 messaging = [File('#cereal/libmessaging.a')]
@@ -60,7 +63,8 @@ Export('cereal', 'messaging')
 
 
 envCython = env.Clone()
-envCython["CCFLAGS"] += ["-Wno-#warnings", "-Wno-deprecated-declarations"]
+envCython["CPPPATH"] += [np.get_include()]
+envCython["CCFLAGS"] += ["-Wno-#warnings", "-Wno-shadow", "-Wno-deprecated-declarations"]
 
 python_libs = []
 if arch == "Darwin":
