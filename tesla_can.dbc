@@ -91,13 +91,6 @@ VAL_TABLE_ DAS_turnIndicatorRequest 3 "DAS_TURN_INDICATOR_CANCEL" 2 "DAS_TURN_IN
 VAL_TABLE_ DAS_turnIndicatorRequestReason 6 "DAS_ACTIVE_COMMANDED_LANE_CHANGE" 5 "DAS_CANCEL_FORK" 4 "DAS_CANCEL_LANE_CHANGE" 3 "DAS_ACTIVE_FORK" 2 "DAS_ACTIVE_SPEED_LANE_CHANGE" 1 "DAS_ACTIVE_NAV_LANE_CHANGE" 0 "DAS_NONE" ;
 VAL_TABLE_ DAS_wiperSpeed 15 "DAS_WIPER_SPEED_INVALID" 14 "DAS_WIPER_SPEED_14" 13 "DAS_WIPER_SPEED_13" 12 "DAS_WIPER_SPEED_12" 11 "DAS_WIPER_SPEED_11" 10 "DAS_WIPER_SPEED_10" 9 "DAS_WIPER_SPEED_9" 8 "DAS_WIPER_SPEED_8" 7 "DAS_WIPER_SPEED_7" 6 "DAS_WIPER_SPEED_6" 5 "DAS_WIPER_SPEED_5" 4 "DAS_WIPER_SPEED_4" 3 "DAS_WIPER_SPEED_3" 2 "DAS_WIPER_SPEED_2" 1 "DAS_WIPER_SPEED_1" 0 "DAS_WIPER_SPEED_OFF" ;
 
-BO_ 1160 DAS_steeringControl: 4 XXX
- SG_ DAS_steeringControlType : 23|2@0+ (1,0) [0|0] "" XXX
- SG_ DAS_steeringControlChecksum : 31|8@0+ (1,0) [0|0] "" XXX
- SG_ DAS_steeringControlCounter : 19|4@0+ (1,0) [0|0] "" XXX
- SG_ DAS_steeringAngleRequest : 6|15@0+ (0.1,-1638.35) [-1638.35|1638.35] "deg" XXX
- SG_ DAS_steeringHapticRequest : 7|1@0+ (1,0) [0|0] "" XXX
-
 BO_ 1160 DAS_steeringControl: 4 NEO
  SG_ DAS_steeringControlType : 23|2@0+ (1,0) [0|0] "" EPAS
  SG_ DAS_steeringControlChecksum : 31|8@0+ (1,0) [0|0] "" EPAS
@@ -271,17 +264,6 @@ BO_ 872 DI_state: 8 DI
  SG_ DI_cruiseSet : 48|8@1+ (1,0) [0|250] ""  NEO
  SG_ DI_stateChecksum : 56|8@1+ (1,0) [0|0] ""  NEO
 
-
- BO_ 697 DAS_control: 8 XXX
- SG_ DAS_setSpeed : 0|12@1+ (0.1,0) [0|409.4] "kph" XXX
- SG_ DAS_accState : 12|4@1+ (1,0) [0|0] "" XXX
- SG_ DAS_aebEvent : 16|2@1+ (1,0) [0|3] "" XXX
- SG_ DAS_jerkMin : 18|9@1+ (0.018,-9.1) [-9.1|0.097999999999999] "m/s^3" XXX
- SG_ DAS_jerkMax : 27|8@1+ (0.034,0) [0|8.67] "m/s^3" XXX
- SG_ DAS_accelMin : 35|9@1+ (0.04,-15) [-15|5.44] "m/s^2" XXX
- SG_ DAS_accelMax : 44|9@1+ (0.04,-15) [-15|5.44] "m/s^2" XXX
- SG_ DAS_controlCounter : 53|3@1+ (1,0) [0|0] "" XXX
- SG_ DAS_controlChecksum : 56|8@1+ (1,0) [0|0] "" XXX
 
  BO_ 521 DAS_longControl: 8 XXX
  SG_ DAS_locMode : 0|2@1+ (1,0) [0|0] "" XXX
