@@ -749,7 +749,7 @@ BO_ 905 DAS_status2: 8 XXX
  SG_ DAS_status2Checksum : 56|8@1+ (1,0) [0|0] "" GTW,APS
 
 BO_ 937 DAS_telemetry: 8 XXX
- SG_ DAS_telemetryMultiplexer: 0|8@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telemetryMultiplexer : 0|8@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telLeftLaneType : 8|3@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telRightLaneType : 11|3@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telLeftMarkerQuality : 14|2@1+ (1,0) [0|0] "" XXX
@@ -760,7 +760,7 @@ BO_ 937 DAS_telemetry: 8 XXX
  SG_ DAS_telRightLaneCrossing : 23|1@1+ (1,0) [0|0] "" XXX
 
 BO_ 938 DAS_telemetryM: 8 XXX
- SG_ DAS_telemetryMultiplexer M : 0|8@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telemetryMultiplexerM M : 0|8@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telLeftLaneType m0 : 8|3@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telRightLaneType m0 : 11|3@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telLeftMarkerQuality m0 : 14|2@1+ (1,0) [0|0] "" XXX
