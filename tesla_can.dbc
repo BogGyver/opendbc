@@ -842,7 +842,7 @@ BO_ 777 DAS_object: 8 XXX
  SG_ DAS_leadVeh2Id : 58|6@1+ (1,0) [0|63] "" XXX
 
 BO_ 778 DAS_objectM: 8 XXX
- SG_ DAS_objectId M : 0|3@1+ (1,0) [0|7] "" XXX
+ SG_ DAS_objectIdM M : 0|3@1+ (1,0) [0|7] "" XXX
  SG_ DAS_leadVehType m0 : 3|3@1+ (1,0) [0|7] "" XXX
  SG_ DAS_leadVehRelevantForControl m0 : 7|1@1+ (1,0) [0|1] "" XXX
  SG_ DAS_leadVehDx m0 : 8|8@1+ (0.5,0) [0|127] "m" XXX
