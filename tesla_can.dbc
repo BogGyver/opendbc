@@ -749,6 +749,17 @@ BO_ 905 DAS_status2: 8 XXX
  SG_ DAS_status2Checksum : 56|8@1+ (1,0) [0|0] "" GTW,APS
 
 BO_ 937 DAS_telemetry: 8 XXX
+ SG_ DAS_telemetryMultiplexer: 0|8@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telLeftLaneType : 8|3@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telRightLaneType : 11|3@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telLeftMarkerQuality : 14|2@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telRightMarkerQuality : 16|2@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telLeftMarkerColor : 18|2@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telRightMarkerColor : 20|2@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telLeftLaneCrossing : 22|1@1+ (1,0) [0|0] "" XXX
+ SG_ DAS_telRightLaneCrossing : 23|1@1+ (1,0) [0|0] "" XXX
+
+BO_ 938 DAS_telemetryM: 8 XXX
  SG_ DAS_telemetryMultiplexer M : 0|8@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telLeftLaneType m0 : 8|3@1+ (1,0) [0|0] "" XXX
  SG_ DAS_telRightLaneType m0 : 11|3@1+ (1,0) [0|0] "" XXX
@@ -816,6 +827,21 @@ BO_ 1001 DAS_bodyControls: 8 XXX
  SG_ DAS_bodyControlsChecksum : 56|8@1+ (1,0) [0|255] "" XXX
 
 BO_ 777 DAS_object: 8 XXX
+ SG_ DAS_objectId : 0|3@1+ (1,0) [0|7] "" XXX
+ SG_ DAS_leadVehType : 3|3@1+ (1,0) [0|7] "" XXX
+ SG_ DAS_leadVehRelevantForControl : 7|1@1+ (1,0) [0|1] "" XXX
+ SG_ DAS_leadVehDx : 8|8@1+ (0.5,0) [0|127] "m" XXX
+ SG_ DAS_leadVehVxRel : 16|4@1+ (4,-30) [-30|26] "m/s" XXX
+ SG_ DAS_leadVehDy : 20|7@1+ (0.35,-22.05) [-22.05|22.4] "m" XXX
+ SG_ DAS_leadVehId : 27|7@1+ (1,0) [0|126] "" XXX
+ SG_ DAS_leadVeh2Type : 34|3@1+ (1,0) [0|7] "" XXX
+ SG_ DAS_leadVeh2RelevantForControl : 38|1@1+ (1,0) [0|1] "" XXX
+ SG_ DAS_leadVeh2Dx : 39|8@1+ (0.5,0) [0|127] "m" XXX
+ SG_ DAS_leadVeh2VxRel : 47|4@1+ (4,-30) [-30|26] "m/s" XXX
+ SG_ DAS_leadVeh2Dy : 51|7@1+ (0.35,-22.05) [-22.05|22.4] "m" XXX
+ SG_ DAS_leadVeh2Id : 58|6@1+ (1,0) [0|63] "" XXX
+
+BO_ 778 DAS_objectM: 8 XXX
  SG_ DAS_objectId M : 0|3@1+ (1,0) [0|7] "" XXX
  SG_ DAS_leadVehType m0 : 3|3@1+ (1,0) [0|7] "" XXX
  SG_ DAS_leadVehRelevantForControl m0 : 7|1@1+ (1,0) [0|1] "" XXX
